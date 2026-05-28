@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block title %}Cadastro — Lumina AI{% endblock %}
+
+{% block body %}
+
+<section>
+  <h2>Criar conta</h2>
+
+  <form method="POST">
+    <div>
+      <label for="nome">Nome de usuário</label>
+      <input type="text" id="nome" name="nome" placeholder="Como devemos te chamar?" required>
+    </div>
+    <div>
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="seu@email.com" required>
+    </div>
+    <div>
+      <label for="senha">Senha</label>
+      <input type="password" id="senha" name="senha" placeholder="••••••••" required>
+
+      {% if cadastro %}
+        <p class="success-message">{{ cadastro }}</p>
+      {% endif %}
+
+    </div>
+    <button type="submit">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+        <circle cx="12" cy="7" r="4"/>
+        <line x1="19" y1="8" x2="19" y2="14"/>
+        <line x1="16" y1="11" x2="22" y2="11"/>
+      </svg>
+      Cadastrar
+    </button>
+  </form>
+
+  <p style="margin-top: 20px;">
+    Já tem uma conta? <a href="/login">Entrar</a>
+  </p>
+</section>
+
+{% endblock %}

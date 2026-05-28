@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Lumina AI{% endblock %}</title>
+    <meta name="description" content="Lumina AI — Inteligência artificial desenvolvida por Izael Carvalho da Silva.">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <aside class="sidebar">
+        <div class="sidebar-logo">
+            <div class="logo-icon">
+                <!-- Lumina spark icon -->
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2L14.5 9.5L22 12L14.5 14.5L12 22L9.5 14.5L2 12L9.5 9.5L12 2Z" fill="white" fill-opacity="0.95"/>
+                    <path d="M19 3L19.9 5.1L22 6L19.9 6.9L19 9L18.1 6.9L16 6L18.1 5.1L19 3Z" fill="white" fill-opacity="0.6"/>
+                </svg>
+            </div>
+            <span class="logo-text">Lumina AI</span>
+        </div>
+
+        {% if "nome_usuario" in session %}
+            <a href="{{ url_for('usuarios', id=session['usuario_id']) }}" class="sidebar-user">
+
+                <div class="user-avatar">
+                    {{ session["nome_usuario"][0].upper() }}
+                </div>
+
+                <span class="user-name">
+                    {{ session["nome_usuario"] }}
+                </span>
+
+            </a>
+        {% endif %}
+
+        <nav class="sidebar-nav">
+            <a href="{{ url_for('homepage') }}" class="{{ 'active' if request.endpoint == 'homepage' }}">
+                <span class="nav-icon">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9.5z"/><polyline points="9 21 9 12 15 12 15 21"/>
+                    </svg>
+                </span>
+                <span>Início</span>
+            </a>
+            <a href="{{ url_for('chat') }}" class="{{ 'active' if request.endpoint == 'chat' }}">
+                <span class="nav-icon">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                    </svg>
+                </span>
+                <span>Chat</span>
+            </a>
+            <a href="{{ url_for('aprendizado') }}" class="{{ 'active' if request.endpoint == 'aprendizado' }}">
+                <span class="nav-icon">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+                    </svg>
+                </span>
+                <span>Aprendizado</span>
+            </a>
+            <a href="{{ url_for('sobre') }}" class="{{ 'active' if request.endpoint == 'sobre' }}">
+                <span class="nav-icon">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/>
+                    </svg>
+                </span>
+                <span>Sobre</span>
+            </a>
+            <a href="{{ url_for('contato') }}" class="{{ 'active' if request.endpoint == 'contato' }}">
+                <span class="nav-icon">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+                    </svg>
+                </span>
+                <span>Contato</span>
+            </a>
+            <a href="{{ url_for('login') }}" class="{{ 'active' if request.endpoint == 'login' }}">
+                <span class="nav-icon">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                    </svg>
+                </span>
+                <span>Login</span>
+            </a>
+            <a href="{{ url_for('cadastro') }}" class="{{ 'active' if request.endpoint == 'cadastro' }}">
+                <span class="nav-icon">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/><line x1="19" y1="8" x2="19" y2="14"/><line x1="16" y1="11" x2="22" y2="11"/>
+                    </svg>
+                </span>
+                <span>Cadastro</span>
+            </a>
+        </nav>
+
+        <div class="sidebar-footer">
+            <p>© 2026 Lumina AI</p>
+        </div>
+    </aside>
+
+    <div class="page-wrapper">
+        <main>
+            {% block body %}{% endblock %}
+        </main>
+
+        <footer>
+            <p>© 2026 Lumina AI — Projeto desenvolvido por Izael Carvalho da Silva.</p>
+            <p>Desenvolvido com Python, Flask e SQLite.</p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/chat.js') }}"></script>
+
+</body>
+</html>

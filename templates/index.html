@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}Início — Lumina AI{% endblock %}
+
+{% block body %}
+
+<section>
+  <h2>Lumina AI — a inteligência que evolui com você</h2>
+  <p>
+    Lumina AI é uma inteligência artificial desenvolvida para aprender novas informações,
+    responder perguntas e evoluir a cada interação, utilizando tecnologias como Python, Flask, HTML, CSS e SQLite.
+  </p>
+
+  <form class="hero-form" id="formInicio">
+    <textarea name="comecarChat" id="comecarChat" rows="2"
+      placeholder="Faça uma pergunta para começar..."
+    ></textarea>
+    <button type="submit">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/>
+      </svg>
+      Enviar
+    </button>
+  </form>
+</section>
+
+{% endblock %}
+

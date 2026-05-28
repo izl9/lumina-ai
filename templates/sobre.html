@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+
+{% block title %}Sobre — Lumina AI{% endblock %}
+
+{% block body %}
+
+<section>
+  <h2>Objetivo do projeto</h2>
+  <details>
+    <summary>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0">
+        <circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/>
+      </svg>
+      Clique aqui para ver o objetivo do projeto
+    </summary>
+    <p>O projeto foi criado com o objetivo de desenvolver uma IA simples utilizando tecnologias web e banco de dados.</p>
+  </details>
+</section>
+
+<section>
+  <h2>Como o projeto funciona</h2>
+  <details>
+    <summary>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0">
+        <circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/>
+      </svg>
+      Saiba mais como funciona o projeto
+    </summary>
+    <ul>
+      <li>Recebe perguntas do usuário</li>
+      <li>Analisa a pergunta enviada</li>
+      <li>Procura respostas armazenadas no banco de dados</li>
+      <li>Responde automaticamente quando encontra uma resposta</li>
+      <li>Aprende novas informações com o tempo</li>
+      <li>Salva perguntas e respostas utilizando SQLite</li>
+      <li>Utiliza Python para processar as informações</li>
+      <li>Funciona através de uma interface web com HTML e CSS</li>
+    </ul>
+  </details>
+</section>
+
+<section>
+  <h2>Tecnologias utilizadas</h2>
+  <details>
+    <summary>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0">
+        <polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>
+      </svg>
+      Veja as tecnologias que usamos
+    </summary>
+    <ul>
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>Python</li>
+      <li>Flask</li>
+      <li>SQLite</li>
+    </ul>
+  </details>
+</section>
+
+<section>
+  <h2>Sobre o desenvolvedor</h2>
+  <p>
+    Projeto desenvolvido por Izael Carvalho da Silva,
+    estudante do curso técnico de Informática da ECIT Dom Marcelo Pinto Carvalheira.
+  </p>
+</section>
+
+<section>
+  <h2>Deixe seu feedback</h2>
+  <form>
+    <fieldset>
+      <legend>Feedback com a Lumina</legend>
+      <div>
+        <label for="nome">Nome</label>
+        <input type="text" name="nome" id="nome" placeholder="Seu nome">
+      </div>
+      <div>
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" placeholder="Seu email">
+      </div>
+      <div>
+        <label for="feedback">Mensagem</label>
+        <textarea name="feedback" id="feedback" rows="4" placeholder="Digite seu feedback..."></textarea>
+      </div>
+      <button type="button" onclick="alert('Feedback enviado!')">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/>
+        </svg>
+        Enviar feedback
+      </button>
+    </fieldset>
+  </form>
+</section>
+
+{% endblock %}
