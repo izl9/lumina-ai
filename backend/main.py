@@ -11,4 +11,5 @@ app.secret_key = os.getenv("APP_SECRET_KEY")
 from backend.views import *
 
 if __name__ == "__main__":
+    print("DB PATH:", os.path.abspath("Lumina.bd"))
     app.run()
