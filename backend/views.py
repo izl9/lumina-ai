@@ -1,4 +1,4 @@
-from main import app
+from backend.main import app
 from banco import cursor
 from flask import render_template, request, redirect, url_for, session, jsonify
 from memoria import buscarHistoricoCompleto, buscarMemoria, montarContexto
