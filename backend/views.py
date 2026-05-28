@@ -1,15 +1,23 @@
 from backend.main import app
-from banco import cursor
+from backend.banco import cursor
+
 from flask import render_template, request, redirect, url_for, session, jsonify
-from memoria import buscarHistoricoCompleto, buscarMemoria, montarContexto
-from usuario import (
+
+from backend.memoria import (
+    buscarHistoricoCompleto,
+    buscarMemoria,
+    montarContexto,
+)
+
+from backend.usuario import (
     cadastrarUsuario,
     verificarUsuario,
     fazerLogin,
     buscarUsuarioPeloId,
     contarConversas,
 )
-from perguntas import processarPergunta, limparHistorico
+
+from backend.perguntas import processarPergunta, limparHistorico
 
 
 @app.route("/")
