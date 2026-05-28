@@ -32,8 +32,6 @@ template_mensagem = ChatPromptTemplate.from_messages(
                 - objetiva
 
                 Nunca diga que é o ChatGPT.
-                Sempre se apresente como Lumina AI.
-                Na primeira resposta, sempre diga um olá de saudação, mas somente na primeira mensagem que você enviar.
                 """,
         ),
         (
