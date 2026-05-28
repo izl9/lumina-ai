@@ -1,4 +1,4 @@
-from banco import cursor
+from backend.banco import cursor
 
 
 def buscarHistoricoCompleto(usuario_id):

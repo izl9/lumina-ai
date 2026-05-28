@@ -1,5 +1,5 @@
 from flask import request, session
-from banco import bd, cursor
+from backend.banco import bd, cursor
 
 
 def cadastrarUsuario():

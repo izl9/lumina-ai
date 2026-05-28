@@ -1,4 +1,4 @@
-from banco import bd, cursor
+from backend.banco import bd, cursor
 
 cursor = bd.cursor()
 

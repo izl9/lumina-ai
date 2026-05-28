@@ -1,7 +1,7 @@
-from banco import bd, cursor
-from IA import registrarConversa
-from chatbot import gerarResposta
-from memoria import buscarMemoria, montarContexto
+from backend.banco import bd, cursor
+from backend.IA import registrarConversa
+from backend.chatbot import gerarResposta
+from backend.memoria import buscarMemoria, montarContexto
 
 
 def processarPergunta(idUsuario, pergunta):
