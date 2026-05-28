@@ -22,4 +22,4 @@ CREATE TABLE IF NOT EXISTS conversas (
 )
 """)
 
-conexao.commit()
+bd.commit()
