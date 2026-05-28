@@ -8,7 +8,7 @@ load_dotenv()
 
 app.secret_key = os.getenv("APP_SECRET_KEY")
 
-from views import *
+from backend.views import *
 
 if __name__ == "__main__":
     app.run()
